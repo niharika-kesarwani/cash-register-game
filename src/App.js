@@ -80,7 +80,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1></h1>
+      <h1>Cash Register Game</h1>
       <input id="billbtn" type="number" onChange={billHandler}></input>
       <input id="cashbtn" onChange={cashHandler}></input>
       <hr />

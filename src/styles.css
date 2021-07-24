@@ -1,4 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Marmelad&display=swap");
+
 .App {
   font-family: sans-serif;
   text-align: center;
+  font-family: "Marmelad", sans-serif;
 }
