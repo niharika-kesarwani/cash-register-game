@@ -4,4 +4,69 @@
   font-family: sans-serif;
   text-align: center;
   font-family: "Marmelad", sans-serif;
+  background-color: papayawhip;
+  max-width: 650px;
+  height: 680px;
+  margin: auto;
+}
+
+.heading {
+  padding: 1rem;
+}
+
+.instruction {
+  padding: 1rem;
+}
+
+#billbtn {
+  width: 50%;
+  height: 1rem;
+  padding: 1rem;
+  margin: 2rem;
+}
+
+#cashbtn {
+  width: 50%;
+  height: 1rem;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+#calculate {
+  padding: 0.5rem;
+  margin: 3rem 0rem 4rem 0rem;
+  width: 40%;
+  height: 3rem;
+  border-color: black;
+  background-color: greenyellow;
+}
+
+.output {
+  border: 2px solid black;
+  border-collapse: collapse;
+  padding: 0.2rem;
+  margin: 0rem 2rem;
+  position: relative;
+}
+
+.tcolumn {
+  border: 2px solid black;
+}
+
+.trow {
+  border: 2px solid black;
+}
+
+.elements {
+  border: 2px solid black;
+  width: 5rem;
+  height: 3rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.trow1,
+.header {
+  background-color: lightcyan;
+  width: 5rem;
 }

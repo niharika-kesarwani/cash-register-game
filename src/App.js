@@ -80,29 +80,52 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Cash Register Game</h1>
-      <input id="billbtn" type="number" onChange={billHandler}></input>
-      <input id="cashbtn" onChange={cashHandler}></input>
-      <hr />
+      <h1 className="heading">Cash Register Game</h1>
+      <p className="instruction">
+        Enter the bill amount and cash given by the customer and know minimum
+        number of notes to return!!!
+      </p>
+      <input
+        id="billbtn"
+        type="number"
+        onChange={billHandler}
+        placeholder="Enter the bill amount here"
+      ></input>
+      <input
+        id="cashbtn"
+        type="number"
+        onChange={cashHandler}
+        placeholder="Enter the cash given by the customer here"
+      ></input>
+      <p></p>
       <button id="calculate" onClick={buttonHandler}>
-        Calculate
+        Calculate the change for me!!
       </button>
-      <hr />
-      <div>Result: </div>
-      <hr />
-      <div id="note2000">2000: {n2000}</div>
-      <hr />
-      <div id="note500">500: {n500}</div>
-      <hr />
-      <div id="note100">100: {n100}</div>
-      <hr />
-      <div id="note20">20: {n20}</div>
-      <hr />
-      <div id="note10">10: {n10}</div>
-      <hr />
-      <div id="note5">5: {n5}</div>
-      <hr />
-      <div id="note1">1: {n1}</div>
+      <table className="output">
+        <tbody className="tcolumn">
+          <tr className="trow">
+            <th className="header">Number</th>
+            <th className="elements">{n2000}</th>
+            <th className="elements">{n500}</th>
+            <th className="elements">{n100}</th>
+            <th className="elements">{n20}</th>
+            <th className="elements">{n10}</th>
+            <th className="elements">{n5}</th>
+            <th className="elements">{n1}</th>
+          </tr>
+          <tr className="trow1">
+            <th className="header">Note</th>
+            <th className="elements">2000</th>
+            <th className="elements">500</th>
+            <th className="elements">100</th>
+            <th className="elements">20</th>
+            <th className="elements">10</th>
+            <th className="elements">5</th>
+            <th className="elements">1</th>
+          </tr>
+          <tr></tr>
+        </tbody>
+      </table>
     </div>
   );
 }
