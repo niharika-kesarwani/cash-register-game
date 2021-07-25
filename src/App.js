@@ -125,7 +125,7 @@ export default function App() {
             <th className="elements">{n1}</th>
           </tr>
           <tr className="trow1">
-            <th className="header">Note</th>
+            <th className="header">Notes (in ₹)</th>
             <th className="elements">2000</th>
             <th className="elements">500</th>
             <th className="elements">100</th>
