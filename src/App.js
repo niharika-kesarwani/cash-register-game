@@ -23,8 +23,19 @@ export default function App() {
 
   function buttonHandler() {
     var diff = cash - bill;
+    var temp1 = bill * 10;
+    var temp2 = cash * 10;
+    var mod1 = temp1 % 10;
+    var mod2 = temp2 % 10;
+
     if (diff < 0) {
       alert("Please enter the cash amount greater then the bill amount!");
+    }
+    if (mod1 !== 0 && mod2 !== 0 && mod2 - mod1 === 0) {
+    } else if (mod1 !== 0 || mod2 !== 0) {
+      alert(
+        "KINDLY NOTE: \n\nYou will be receiving more money (in paise) than what is mentioned later!!!!"
+      );
     }
     if (diff >= 2000) {
       set2000(numofNotes(diff, 2000));
