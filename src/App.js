@@ -11,6 +11,7 @@ export default function App() {
   const [n1, set1] = useState(0);
   const [bill, setBill] = useState(0);
   const [cash, setCash] = useState(0);
+  const [msg, setMsg] = useState("");
 
   function numofNotes(num, note) {
     var index = 0;
@@ -27,53 +28,59 @@ export default function App() {
     var temp2 = cash * 10;
     var mod1 = temp1 % 10;
     var mod2 = temp2 % 10;
+    var flag = 0;
 
-    if (diff < 0) {
-      alert("Please enter the cash amount greater then the bill amount!");
-    }
-    if (mod1 !== 0 && mod2 !== 0 && mod2 - mod1 === 0) {
+    if (cash < 0 || bill < 0) {
+      setMsg("Please enter the amount greater than 0!");
+    } else if (diff < 0) {
+      setMsg("Please enter the cash amount greater then the bill amount!");
+    } else if (mod1 !== 0 && mod2 !== 0 && mod2 - mod1 === 0) {
     } else if (mod1 !== 0 || mod2 !== 0) {
-      alert(
+      setMsg(
         "KINDLY NOTE: \n\nYou will be receiving more money (in paise) than what is mentioned later!!!!"
       );
+      flag = 1;
+    } else {
+      flag = 1;
+      setMsg("");
     }
-    if (diff >= 2000) {
+    if (diff >= 2000 && flag) {
       set2000(numofNotes(diff, 2000));
       diff = diff - numofNotes(diff, 2000) * 2000;
     } else {
       set2000(0);
     }
-    if (diff >= 500) {
+    if (diff >= 500 && flag) {
       set500(numofNotes(diff, 500));
       diff = diff - numofNotes(diff, 500) * 500;
     } else {
       set500(0);
     }
-    if (diff >= 100) {
+    if (diff >= 100 && flag) {
       set100(numofNotes(diff, 100));
       diff = diff - numofNotes(diff, 100) * 100;
     } else {
       set100(0);
     }
-    if (diff >= 20) {
+    if (diff >= 20 && flag) {
       set20(numofNotes(diff, 20));
       diff = diff - numofNotes(diff, 20) * 20;
     } else {
       set20(0);
     }
-    if (diff >= 10) {
+    if (diff >= 10 && flag) {
       set10(numofNotes(diff, 10));
       diff = diff - numofNotes(diff, 10) * 10;
     } else {
       set10(0);
     }
-    if (diff >= 5) {
+    if (diff >= 5 && flag) {
       set5(numofNotes(diff, 5));
       diff = diff - numofNotes(diff, 5) * 5;
     } else {
       set5(0);
     }
-    if (diff >= 1) {
+    if (diff >= 1 && flag) {
       set1(numofNotes(diff, 1));
       diff = diff - numofNotes(diff, 1) * 1;
     } else {
@@ -112,10 +119,11 @@ export default function App() {
       <button id="calculate" onClick={buttonHandler}>
         Calculate the change for me!!
       </button>
+      <p id="error-message">{msg}</p>
       <table className="output">
         <tbody className="tcolumn">
           <tr className="trow">
-            <th className="header">Number</th>
+            <th className="header">No. of notes</th>
             <th className="elements">{n2000}</th>
             <th className="elements">{n500}</th>
             <th className="elements">{n100}</th>
