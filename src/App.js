@@ -168,7 +168,7 @@ export default function App() {
           <li className="lists-item-inline">
             <a
               className="footer-links"
-              href="https://github.com/NiharikaNeha"
+              href="https://github.com/niharika-kesarwani"
               rel="noreferrer"
               target="_blank"
             >
